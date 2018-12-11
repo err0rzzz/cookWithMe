@@ -10,14 +10,28 @@ public class buttonHandler : MonoBehaviour, IVirtualButtonEventHandler {
 
 	// Use this for initialization
 	void Start () {
-
+       // button = GameObject.Find("bttn_ok");
         button.GetComponent<VirtualButtonBehaviour>().RegisterEventHandler(this);
    		
 	}
 	
     public void OnButtonPressed(VirtualButtonBehaviour vb)
     {
-        Debug.Log("ok!");
+        if (button.name == "ok")
+        {
+            Debug.Log("ok!");
+        }
+
+        if (button.name == "back")
+        {
+            Debug.Log("back");
+        }
+
+        if (button.name == "next")
+        {
+            Debug.Log("next");
+        }
+
     }
 
     public void OnButtonReleased(VirtualButtonBehaviour vb)
