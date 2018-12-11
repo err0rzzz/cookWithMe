@@ -20,16 +20,4 @@ public class buttonVisableSetter : MonoBehaviour {
         if (mr.enabled) Main.buttonsVisable = true;
         else Main.buttonsVisable = false;
     }
-
-    void OnDisable()
-    {
-
-    }
-
-    void OnEnable()
-    {
-
-    }
-
-
 }

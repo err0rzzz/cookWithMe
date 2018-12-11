@@ -8,27 +8,69 @@ public class buttonHandler : MonoBehaviour, IVirtualButtonEventHandler {
 
     public GameObject button, timerIndicator;
 
-	// Use this for initialization
-	void Start () {
-       // button = GameObject.Find("bttn_ok");
-        button.GetComponent<VirtualButtonBehaviour>().RegisterEventHandler(this);
-   		
+    private static bool OkDown = false, NextDown = false, BackDown = false;
+
+
+    public static bool okDown()
+    {
+        if (OkDown)
+        {
+            OkDown = false;
+            return true;
+        }
+
+        else
+            return false;
+    }
+
+    public static bool nextDown()
+    {
+        if (NextDown)
+        {
+            NextDown = false;
+            return true;
+        }
+
+        else
+            return false;
+    }
+
+    public static bool backDown()
+    {
+        if (BackDown)
+        {
+            BackDown = false;
+            return true;
+        }
+
+        else
+            return false;
+    }
+
+
+
+    void Start ()
+    {
+        button.GetComponent<VirtualButtonBehaviour>().RegisterEventHandler(this);   		
 	}
-	
+
     public void OnButtonPressed(VirtualButtonBehaviour vb)
     {
         StartCoroutine("buttonTimer");
-        
     }
+    
 
 
 
     public void OnButtonReleased(VirtualButtonBehaviour vb)
     {
+        //reset button visual and timer
         StopAllCoroutines();
         timerIndicator.SetActive(false);
         timerIndicator.transform.localScale = new Vector3 (1f, 0.2f, 1f);
-        textUpdater.UpdateText(" ");
+
+        //reset button logic
+        OkDown = false; NextDown = false; BackDown = false;
     }
 
 	// Update is called once per frame
@@ -57,20 +99,17 @@ public class buttonHandler : MonoBehaviour, IVirtualButtonEventHandler {
             {
                 if (button.name == "ok")
                 {
-                    Debug.Log("ok!");
-                    textUpdater.UpdateText("ok");
+                    OkDown = true;
                 }
 
                 if (button.name == "back")
                 {
-                    Debug.Log("back");
-                    textUpdater.UpdateText("back");
+                    BackDown = true;
                 }
 
                 if (button.name == "next")
                 {
-                    Debug.Log("next");
-                    textUpdater.UpdateText("next");
+                    NextDown = true;
                 }
             }
 
