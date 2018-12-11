@@ -7,7 +7,7 @@ using Vuforia;
 public class Main : MonoBehaviour {
 
     public static bool buttonsVisable = false;
-
+    
     public GameObject buttonBoard;
     ImageTarget buttons;
 
@@ -16,6 +16,7 @@ public class Main : MonoBehaviour {
 	void Start ()
     {
         buttons = buttonBoard.GetComponent<ImageTarget>();
+
 
         textUpdater.UpdateText("Hey! I Hear you want to learn how to cook. " +
             "\r\n first, you're going to need to look at the controls" +
@@ -27,9 +28,14 @@ public class Main : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        
+
         if (buttonsVisable)
         {
-            textUpdater.UpdateText("good! \r\n now press > to continue.");
+            textUpdater.UpdateText("Hey! I Hear you want to learn how to cook. " +
+            "\r\n first, you're going to need to look at the controls" +
+            "\r\n good! \r\n now press O to continue.");
+
         }
            		
 	}

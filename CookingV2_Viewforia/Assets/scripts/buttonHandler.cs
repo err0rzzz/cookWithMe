@@ -18,8 +18,7 @@ public class buttonHandler : MonoBehaviour, IVirtualButtonEventHandler {
     public void OnButtonPressed(VirtualButtonBehaviour vb)
     {
         StartCoroutine("buttonTimer");
-
-
+        
     }
 
 

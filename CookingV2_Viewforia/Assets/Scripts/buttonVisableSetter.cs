@@ -4,28 +4,31 @@ using UnityEngine;
 
 public class buttonVisableSetter : MonoBehaviour {
 
-	// Use this for initialization
+    public GameObject myself;
+    private MeshRenderer mr;
+
 	void Start ()
     {
+        mr = myself.GetComponent<MeshRenderer>();
+
         Main.buttonsVisable = true;
     }
 	
 	// Update is called once per frame
 	void Update ()
-    {
-	
-   
-       
-	}
+    {           
+        if (mr.enabled) Main.buttonsVisable = true;
+        else Main.buttonsVisable = false;
+    }
 
     void OnDisable()
     {
-        Main.buttonsVisable = false;
+
     }
 
     void OnEnable()
     {
-        Main.buttonsVisable = true;
+
     }
 
 
