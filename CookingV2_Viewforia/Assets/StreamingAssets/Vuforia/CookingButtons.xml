@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="custom1" size="1.000000 1.000000" />
+    <ImageTarget name="Chocolate_chips" size="1.000000 1.000000" />
+    <ImageTarget name="butter" size="1.000000 1.000000" />
+    <ImageTarget name="Mixing2" size="1.000000 1.000000" />
+    <ImageTarget name="Mixing1" size="1.000000 1.000000" />
+    <ImageTarget name="buttons" size="3.500000 1.379000" />
+    <ImageTarget name="Sugar_Caster" size="3.500000 1.379000" />
+    <ImageTarget name="Sugar_Soft_Brown" size="3.500000 1.379000" />
+    <ImageTarget name="V1" size="3.500000 1.379000" />
     <ImageTarget name="latest" size="4.000000 6.147541" />
-    <ImageTarget name="combined" size="3.000000 0.994000" />
     <ImageTarget name="nextv5" size="1.000000 1.000000" />
     <ImageTarget name="anchor" size="1.600000 1.000000" />
     <ImageTarget name="Ok" size="1.000000 1.000000" />
